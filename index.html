@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>#TITLE</title>
+        <link rel="stylesheet" href="css/normalize.css"> <!-- or the minified normalize -->
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <style>
+        	#scrollable:hover{
+        		/*cursor: pointer;*/
+        		border: red 12px solid !important;
+        		  -webkit-touch-callout: none; /* iOS Safari */
+			      -webkit-user-select: none; /* Safari */
+			      -khtml-user-select: none; /* Konqueror HTML */
+			       -moz-user-select: none; /* Firefox */
+			        -ms-user-select: none; /* Internet Explorer/Edge */
+			            user-select: none; /* Non-prefixed version, currently
+			                                  supported by Chrome and Opera */
+        	}
+        </style>
+    </head>
+    <body id="">
+        <div id="scrollable" class="section dark" style="height: 150px; border: red 1px solid; overflow-y: scroll">
+  <div class="wrapper">
+    <h2>Ssample text</h2>
+    <div class="code">
+      textf,.gnfkdgk dfjgkljdfklgjfd
+    </div>
+  </div>
+    <p> sample text </p>
+
+dgkdgkl kdfjgklfdjgkl jdfklgjf
+
+sample text
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+  <p> sample text </p>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <h2>dfdfdfdfd</h2>
+    <div class="code"> hello
+    </div>
+  </div>
+</div>
+
+<div class="section dark">
+  <div class="wrapper">
+    <h2>Mouse up event</h2>
+    <div class="code">
+dfdfddffd dfdf dfdf dfdf dfdf dfdf dfd dfd df dfd df dd    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="wrapper">
+    <h2>Mouse move event</h2>
+    <div class="code">
+window.addEventListener('mousemove', function(e){ 
+  if(curDown === true){
+    window.scrollTo(document.body.scrollLeft + (curXPos - e.pageX), document.body.scrollTop + (curYPos - e.pageY));
+  }
+});
+    </div>
+  </div>
+</div>
+
+    <script src="touchScrollv3.js"></script>
+    <script>
+          var touch = new TouchScroll();
+          touch.enableScroll();
+
+          var pussy = new TouchScroll(.3, "scrollable");
+          pussy.enableScroll();
+          // touch.
+          </script>
+    </body>       
+</html>
+
+
