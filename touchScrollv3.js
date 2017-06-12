@@ -29,6 +29,7 @@ class TouchScroll {
         }
         else {            
             this.mScrollableArea = scrollableArea;
+            // if scrollableArea is defined, disable whole page scrolling
             this.mScrollWholePage = false;
         }            
     }
@@ -45,38 +46,50 @@ class TouchScroll {
      
 
         window.addEventListener("load", function (event) {              
-            if (scrollWholePage) {                           
+            // set our scrollable obj
+            if (scrollWholePage) {               
                 obj = window;
             } else {
-                if (document.getElementById(scrollableArea) !== null) {
-                    obj = document.getElementById(scrollableArea);
+                if (document.getElementsByClassName(scrollableArea) !== null) {
+                    obj = document.getElementsByClassName(scrollableArea);
                 } else {
                     alert("can't find obj with id attribute value: '" + scrollableArea + "'");
                 }
-            }
+            }   
+
 
             function pressed(e) {
+                // console.log("pressed");
                 isMouseDown= true;
                 currentXPos = e.pageX;
                 currentYPos = e.pageY
             }
 
-            function drag(e) {
+            function drag(e, el) {
+                console.log(el);
                 if (isMouseDown === true) {
                     if (scrollWholePage) {
-                        obj.scrollTo(document.body.scrollLeft + (currentXPos- e.pageX), document.body.scrollTop + (currentYPos - e.pageY));
+                        el.scrollTo(document.body.scrollLeft + (currentXPos- e.pageX), document.body.scrollTop + (currentYPos - e.pageY));
                     }
                     else /*if only part of a page like a div*/ {
-                        obj.scrollLeft = obj.scrollLeft + (currentXPos - e.pageX) * speed; //not tested yet
-                        obj.scrollTop = obj.scrollTop + (currentYPos - e.pageY) * speed;
+                        el.scrollLeft = el.scrollLeft + (currentXPos - e.pageX) * speed; //not tested yet
+                        el.scrollTop = el.scrollTop + (currentYPos - e.pageY) * speed;
                     }
                 }
-            }
+            }            
 
-            if (obj) {
-                obj.addEventListener('mousedown', pressed);
-                obj.addEventListener('mouseup', function (e) { isMouseDown = false; });
-                obj.addEventListener('mousemove', drag);
+        // if a scrollable obj exists
+            if(obj.length >= 1) {
+                console.log(obj.length);
+                for(var i=0; i<obj.length; i++) {
+                    let el = obj[i];
+                    obj[i].addEventListener('mousedown', pressed);
+                    obj[i].addEventListener('mouseup', function(e) { isMouseDown = false; });
+                    obj[i].addEventListener('mousemove', function(e) { 
+                        console.log(obj[i]);
+                        drag(e, el); 
+                    });
+                }
             }
 
         });
