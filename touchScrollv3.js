@@ -1,9 +1,10 @@
 /**
  * @touchScroll - touch dragging
  * yihseverino@gmail.com
- *todo: create a class - DONE
-*TODO: getElementByID to getElementByClassName for multiple elements
- 
+ *TODO: CREATAE A CLASS - DONE
+ *TODO: getElementByID to getElementByClassName for multiple elements - DONE
+ *TODO: srollable  window object
+ *TODO: IMPROVE DEMO PAGE (HTML/CSS)
  */
 
 // NOTE:   SCROLLABLE AREA SHOULD BE ID (change later to class)
@@ -36,13 +37,13 @@ class TouchScroll {
 
     enableScroll() {
         
-        var scrollWholePage = this.mScrollWholePage;
-        var scrollableArea = this.mScrollableArea;
-        var obj = this.mObj;
-        var isMouseDown = this.mIsMouseDown;
-        var currentXPos= this.mCurrentXPos;
-        var currentYPos = this.mCurrentYPos;
-        var speed = this.mSpeed;
+        let scrollWholePage = this.mScrollWholePage;
+        let scrollableArea = this.mScrollableArea;
+        let obj = this.mObj;
+        let isMouseDown = this.mIsMouseDown;
+        let currentXPos= this.mCurrentXPos;
+        let currentYPos = this.mCurrentYPos;
+        let speed = this.mSpeed;
      
 
         window.addEventListener("load", function (event) {              
@@ -78,10 +79,12 @@ class TouchScroll {
                 }
             }            
 
-        // if a scrollable obj exists
+            // if a scrollable obj exists
             if(obj.length >= 1) {
-                console.log(obj.length);
-                for(var i=0; i<obj.length; i++) {
+                
+                //iterate  and bind an event to each of the elements
+                for(let i=0; i<obj.length; i++) {
+                   
                     let el = obj[i];
                     obj[i].addEventListener('mousedown', pressed);
                     obj[i].addEventListener('mouseup', function(e) { isMouseDown = false; });
