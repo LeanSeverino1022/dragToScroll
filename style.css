@@ -1,11 +1,201 @@
-      	#scrollable:hover{
-        		/*cursor: pointer;*/
-        		border: red 12px solid !important;
-        		  -webkit-touch-callout: none; /* iOS Safari */
-			      -webkit-user-select: none; /* Safari */
-			      -khtml-user-select: none; /* Konqueror HTML */
-			       -moz-user-select: none; /* Firefox */
-			        -ms-user-select: none; /* Internet Explorer/Edge */
-			            user-select: none; /* Non-prefixed version, currently
-			                                  supported by Chrome and Opera */
-        	}
+/* BASE STYLES */
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 14px;
+}
+
+p{
+	padding: 5px 8px;
+}
+
+@media only screen and (min-width: 768px) {
+	html {
+		font-size: 21px;
+	}
+}
+
+body {
+	font-size: 1rem; /* around 15px */
+	background-color: #5BC0DE;
+	line-height: 1.5;
+	color: #1F3D20;
+}
+
+section{
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+/* STYLE BY SECION */
+
+#wrapper {
+	padding: 2% 10%;
+}
+
+/*=========== HEADER=========== */
+
+span#lib-name{
+	background: #4964D4;
+	padding: 5px 8px;
+	border-radius: 5px;
+	color: #FFFFF3;
+	white-space: nowrap;
+	line-height: 2;
+}
+
+#instructions-img{
+	max-width: 100%;
+}
+
+
+.map {
+	height: 200px;
+	width: 90%;
+	max-width: 600px;
+	overflow: auto;
+	margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+	.map {
+		height: 400px;
+   }
+}
+
+.card.v-scroll {
+	width: 90%;
+	height: 200px;
+	overflow-y: scroll;
+	background-color: #FF7863;
+	color: #fff;
+	overflow-wrap: break-word;
+}
+
+@media only screen and (min-width: 768px) {
+	.card.v-scroll {
+		height: 400px;
+		width: 300px;
+   }
+}
+.card.h-scroll {
+	font-size: 0;
+	width: 90%;
+	max-width: 600px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+section .code-snippet {
+	margin-top: 3rem;	
+}
+
+.tip-content{
+	max-width: 800px;
+}
+
+
+@media only screen and (min-width: 1165px) {
+	.code-snippet  {
+		width: 49%;
+		display: inline-block;
+		vertical-align: top;
+   }
+
+   .code-snippet:nth-child(2){
+	   margin-right: 10px;
+   }
+}
+
+.code-snippet .f6 {
+	padding: 4px 0;
+	display: block;
+	background: #BAEAF8;
+	padding: 5px;
+		
+}
+
+pre {
+	font-size: 13px;
+	background: #fff;
+	color: #1F3D20;
+	padding: 4px;
+}
+
+
+footer {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: .8rem;
+}
+
+footer p {
+	font-weight: 500;
+}
+
+
+/*============== helper class =============*/
+.f1 {
+	font-size: 3rem;
+}
+.f2 {
+	font-size: 2.25rem;
+}
+.f3 {
+	font-size: 1.5rem;
+}
+.f4 {
+	font-size: 1.25rem;
+}
+.f5 {
+	font-size: 1rem;
+}
+.f6 {
+	font-size: .875rem;
+}
+.f1,.f2,.f3,.f4,.f5,.f6 {
+	Font-Family: 'Droid Serif', Serif;
+}
+
+.card {
+	box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.no-text-select{
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+/* FIX BUGS */
+
+/* remove vertical space between image and scroll container  */
+.map, .h-scroll {
+	font-size: 0;
+}
+

@@ -1,115 +1,115 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>#TITLE</title>
-        <link rel="stylesheet" href="css/normalize.css"> <!-- or the minified normalize -->
-        <!-- <link rel="stylesheet" href="css/style.css"> -->
-        <style>
-        	#scrollable:hover{
-        		/*cursor: pointer;*/
-        		border: red 12px solid !important;
-        		  -webkit-touch-callout: none; /* iOS Safari */
-			      -webkit-user-select: none; /* Safari */
-			      -khtml-user-select: none; /* Konqueror HTML */
-			       -moz-user-select: none; /* Firefox */
-			        -ms-user-select: none; /* Internet Explorer/Edge */
-			            user-select: none; /* Non-prefixed version, currently
-			                                  supported by Chrome and Opera */
-        	}
-        </style>
-    </head>
-    <body id="">
-        <div class="scrollable" class="section dark" style="height: 150px; border: red 1px solid; overflow-y: scroll">
-  <div class="wrapper">
-    <h2>Ssample text</h2>
-    <div class="code">
-      textf,.gnfkdgk dfjgkljdfklgjfd
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#TITLE</title>
+    <link rel="stylesheet" href="css/normalize.css"> <!-- or the minified normalize -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="text-center">
+            <h1 class="f3">Demo page for my <span id="lib-name">Drag-To-Scroll</span> library</h1>
+            <span class="text-center text-white f6">Allow smartphone like scrolling on your Desktop browser</span>
+        </header>
+        <main>
+            <section class="text-center ">
+                <img id="instructions-img" class="card" src="images/instructions.png">
+            </section>
+            <section class="center">               
+                <div class="card map scrollable">
+                    <img draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()" src="images/map.png" >
+                
+            </section>
+
+            <section>
+                <div class="card v-scroll scrollable no-text-select center">
+                    <p>Hard cheese cut the cheese fromage. Mozzarella squirty cheese the big cheese halloumi babybel
+                        cheesecake
+                        cheese on
+                        toast chalk and cheese. Bavarian bergkase mascarpone cauliflower cheese everyone loves monterey
+                        jack parmesan
+                        croque
+                        monsieur cheese slices. Halloumi parmesan fromage frais blue castello ricotta taleggio bocconcini
+                        melted
+                        cheese.
+                        Feta. </p>
+                    <p>
+                        Stilton cheddar jarlsberg. Cheese slices red leicester cheese triangles danish fontina halloumi
+                        camembert de
+                        normandie red leicester cow. St. agur blue cheese boursin cheese and biscuits pepper jack who moved
+                        my cheese
+                        camembert de normandie jarlsberg caerphilly. Bavarian bergkase boursin.
+
+                        Emmental when the cheese comes out everybody's happy cheesecake. Cheese slices rubber cheese gouda
+                        cheese
+                        triangles
+                        bocconcini manchego lancashire squirty cheese. Gouda feta cheese and wine brie cheese strings
+                        manchego red
+                        leicester
+                        melted cheese. Lancashire cheeseburger jarlsberg.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class="card h-scroll scrollable center"><img src="images/alphabet.png" draggable="false" ondragstart="return false;" ></div>
+            </section>
+
+            <section id="tip" class="clearfix">
+                <div class="tip-content center">
+                    <p class="f4 text-center"> For better scrolling experience, you may want to disable <span style="background: #1282F8; color: #fff">text selection/highlighting</span> and image dragging. Here's how you can do it (if you need to). 
+                    </p>
+                    <div class="code-snippet">              
+                        <span class="f6">Prevent Image Dragging</span>
+                        <pre><code>&#x3C;img src=&#x22;someImage.png&#x22; draggable=&#x22;false&#x22; onmousedown=&#x22;if (event.preventDefault) event.preventDefault()&#x22;&#x3E;</code></pre>                   
+                    </div>
+                    <div class="code-snippet">
+                    <span class="f6">Prevent text highlighting</span>
+                    <pre><code style="font-size: 12px">
+<span style="color: red">CSS</span>                 
+.no-text-select{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+<span style="color: red">HTML</span>
+&#x3C;p class=&#x22;no-text-select&#x22;&#x3E;
+    Unselectable text.
+&#x3C;/p&#x3E;</code></pre>
+                </div> 
+                </div><!-- -->
+            </section>
+        </main>
     </div>
-  </div>
-    <p> sample text </p>
-
-dgkdgkl kdfjgklfdjgkl jdfklgjf
-
-sample text
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-</div>
+    <footer>
+        <p>Leandro Severino - yihseverino@gmail.com</p>
+    </footer>
 
 
 
-  <div class="scrollable" class="section dark" style="width: 80px; height: 150px; border: red 1px solid; overflow-y: scroll">
-  <div class="wrapper">
-    <h2>Ssample text</h2>
-    <div class="code">
-      textf,.gnfkdgk dfjgkljdfklgjfd
-    </div>
-  </div>
-    <p> sample text </p>
 
-dgkdgkl kdfjgklfdjgkl jdfklgjf
 
-sample text
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-  <p> sample text </p>
-</div>
-<div class="section">
-  <div class="wrapper">
-    <h2>dfdfdfdfd</h2>
-    <div class="code"> hello
-    </div>
-  </div>
-</div>
+    <script src="js/dragToScroll.js"></script>
+    <script src="js/script.js"></script>
+</body>
 
-<div class="section dark">
-  <div class="wrapper">
-    <h2>Mouse up event</h2>
-    <div class="code">
-dfdfddffd dfdf dfdf dfdf dfdf dfdf dfd dfd df dfd df dd    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="wrapper">
-    <h2>Mouse move event</h2>
-    <div class="code">
-window.addEventListener('mousemove', function(e){ 
-  if(curDown === true){
-    window.scrollTo(document.body.scrollLeft + (curXPos - e.pageX), document.body.scrollTop + (curYPos - e.pageY));
-  }
-});
-    </div>
-  </div>
-</div>
-
-    <script src="touchScrollv3.js"></script>
-    <script>
-          let touch = new TouchScroll();
-          touch.enableScroll();
-
-          var pussy = new TouchScroll(.3, "scrollable");
-          pussy.enableScroll();
-          // touch.
-          </script>
-    </body>       
 </html>
 
 
+<!-- TODO -->
+
+<!-- 
+    show how to use/installation
+
+ -->

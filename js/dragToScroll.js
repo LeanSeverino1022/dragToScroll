@@ -1,19 +1,24 @@
 /**
  * @touchScroll - touch dragging
  * yihseverino@gmail.com
- *TODO: CREATAE A CLASS - DONE
- *TODO: getElementByID to getElementByClassName for multiple elements - DONE
- *TODO: srollable  window object
- *TODO: IMPROVE DEMO PAGE (HTML/CSS)
+ * 
+ * TODO:
+ * 
+ *done: CREATAE A CLASS
+ *done: getElementByID to getElementByClassName for multiple elements - DONE
+ *fix: make whole page scrollable
+ *done: IMPROVE DEMO PAGE (HTML/CSS)
+ *fix: refactor js
+ *TODO: determine if I need whole page scrolling...
  */
 
-// NOTE:   SCROLLABLE AREA SHOULD BE ID (change later to class)
+
 
 "use strict";
 
 class TouchScroll {
 
-    constructor( speed, scrollableArea ) {
+    constructor( scrollableArea, speed ) {
        
         this.mScrollWholePage = true;
         this.mCurrentXPos = 0;
@@ -51,9 +56,11 @@ class TouchScroll {
             if (scrollWholePage) {               
                 obj = window;
             } else {
-                if (document.getElementsByClassName(scrollableArea) !== null) {
+                if (document.getElementsByClassName(scrollableArea).length) {
                     obj = document.getElementsByClassName(scrollableArea);
+                    
                 } else {
+                    debugger;
                     alert("can't find obj with id attribute value: '" + scrollableArea + "'");
                 }
             }   
@@ -67,7 +74,6 @@ class TouchScroll {
             }
 
             function drag(e, el) {
-                console.log(el);
                 if (isMouseDown === true) {
                     if (scrollWholePage) {
                         el.scrollTo(document.body.scrollLeft + (currentXPos- e.pageX), document.body.scrollTop + (currentYPos - e.pageY));
@@ -104,16 +110,7 @@ class TouchScroll {
 
 }
 
-// set desired values
-// var speed = .20;
-// var scrollWholePage = 1;
-// var containerId = "scrollable";
 
-// var currentXPos = 0;
-// var currentYPos = 0;
-// var isMouseDown = false;
-
-// var obj;
 
 
 // resources:
